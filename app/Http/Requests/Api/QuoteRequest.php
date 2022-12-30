@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api;
 
+use Database\Factories\QuoteService;
 use Illuminate\Foundation\Http\FormRequest;
 
 class QuoteRequest extends FormRequest
@@ -24,7 +25,7 @@ class QuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'limit' => ['integer', 'max:10']
+            'limit' => ['integer', 'max:' . QuoteService::MAX_QUOTES]
         ];
     }
 }

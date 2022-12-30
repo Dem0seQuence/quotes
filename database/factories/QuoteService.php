@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Services;
+namespace Database\Factories;
 
 use App\Contracts\QuoteRepositoryContract;
 use App\Decorators\Quote\ShoutingQuote;
 
 class QuoteService
 {
+    const MAX_QUOTES = 10;
+
     public function __construct(protected QuoteRepositoryContract $quoteRepository)
     {
     }

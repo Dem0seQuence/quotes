@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('author');
             $table->string('author_slug');
-            $table->string('quote');
+            $table->text('quote');
             $table->timestamps();
 
             $table->index('author_slug', 'author_slug_index');

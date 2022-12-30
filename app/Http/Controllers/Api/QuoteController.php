@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\QuoteRequest;
-use App\Services\QuoteService;
+use Database\Factories\QuoteService;
 use Illuminate\Http\JsonResponse;
 
 class QuoteController extends Controller
