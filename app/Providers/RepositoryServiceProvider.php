@@ -18,14 +18,14 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-//        $this->app->bind(
-//            QuoteRepositoryContract::class,
-//            fn($app) => new CachingQuote(new JsonQuoteRepository())
-//        );
         $this->app->bind(
             QuoteRepositoryContract::class,
-            fn($app) => new CachingQuote(new ApiQuoteRepository())
+            fn($app) => new CachingQuote(new JsonQuoteRepository())
         );
+//        $this->app->bind(
+//            QuoteRepositoryContract::class,
+//            fn($app) => new CachingQuote(new ApiQuoteRepository())
+//        );
 //        $this->app->bind(
 //            QuoteRepositoryContract::class,
 //            fn($app) => new CachingQuote(new EloquentQuoteRepository())
