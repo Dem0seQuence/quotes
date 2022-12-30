@@ -5,3 +5,5 @@ dev:
 	./vendor/bin/sail up -d
 seed:
 	./vendor/bin/sail artisan migrate:refresh --seed
+test:
+	./vendor/bin/sail test

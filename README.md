@@ -26,6 +26,6 @@ Github repository: [twiscard/techtest](https://github.com/twiscard/techtest)
 ### Examples
 - `./vendor/bin/sail artisan quotes:shout steve-jobs --limit=2`
 
-# Tests
+## Tests
  Running tests:
-- `./vendor/bin/sail test`
+- `make test`
