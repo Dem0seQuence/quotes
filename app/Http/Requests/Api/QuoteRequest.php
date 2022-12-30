@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Api;
 
-use Database\Factories\QuoteService;
+use App\Services\QuoteService;
 use Illuminate\Foundation\Http\FormRequest;
 
 class QuoteRequest extends FormRequest

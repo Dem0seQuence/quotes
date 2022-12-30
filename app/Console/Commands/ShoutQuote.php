@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use Database\Factories\QuoteService;
+use App\Services\QuoteService;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 

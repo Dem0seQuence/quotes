@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Database\Factories;
+namespace App\Services;
 
 use App\Contracts\QuoteRepositoryContract;
 use App\Decorators\Quote\ShoutingQuote;
