@@ -13,6 +13,7 @@ class EloquentQuoteRepository implements QuoteRepositoryContract
     public function getQuotes(string $author, int $limit = 1): array
     {
         return Quote::where('author_slug', Str::slug($author))
+            ->orWhere('author', $author)
             ->limit($limit)
             ->pluck('quote')
             ->toArray();

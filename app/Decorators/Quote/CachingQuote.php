@@ -7,6 +7,7 @@ namespace App\Decorators\Quote;
 use App\Contracts\QuoteRepositoryContract;
 use App\Jobs\CachingJob;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 
 class CachingQuote implements QuoteRepositoryContract
 {
@@ -18,21 +19,25 @@ class CachingQuote implements QuoteRepositoryContract
 
     public function getQuotes(string $author, int $limit = 1): array
     {
-        $cacheKey = $this->getKeyPrefix() . "quotes:$author:$limit";
-
-        if ($value = Cache::get($cacheKey)) {
+        if ($value = $this->getFromCache($author, $limit)) {
             return $value;
         }
 
         $quotes = $this->quoteRepositoryContract->getQuotes($author, $limit);
 
-        CachingJob::dispatch($cacheKey, self::TTL, $quotes);
+        CachingJob::dispatch($this->getCacheKey($author, $limit), self::TTL, $quotes);
 
         return $quotes;
     }
 
-    private function getKeyPrefix(): string
+    public function getFromCache(string $author, int $limit = 1): ?array
     {
-        return get_class($this->quoteRepositoryContract) . ':';
+        return Cache::get($this->getCacheKey($author, $limit));
+    }
+
+    public function getCacheKey(string $author, int $limit = 1): string
+    {
+        $author = Str::slug($author);
+        return $this->quoteRepositoryContract::class . ":quotes:$author:$limit";
     }
 }

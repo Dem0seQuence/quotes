@@ -11,6 +11,7 @@ class ShoutTest extends TestCase
     public function test_shouting_mutator_with_simple_quote(): void
     {
         $this->assertEquals('MY QUOTE!', Shout::get('my quote'));
+        $this->assertEquals('MY QUOTE!', Shout::get('my quote!'));
     }
 
     public function test_shouting_mutator_with_empty_quote(): void

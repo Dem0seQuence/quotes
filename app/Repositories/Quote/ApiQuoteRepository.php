@@ -15,6 +15,8 @@ class ApiQuoteRepository implements QuoteRepositoryContract
 //            'X-TheySaidSo-Api-Secret' => '123'
 //        ])->get('https://quotes.rest/quote/search.json', ['author' => $author])->json());
 
-        return Http::asJson()->acceptJson()->get('https://quotes.rest/qod')->json();
+        return collect(Http::asJson()->acceptJson()->get('https://quotes.rest/qod')->json('contents.quotes'))
+            ->pluck('quote')
+            ->toArray();
     }
 }

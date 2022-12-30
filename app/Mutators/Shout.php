@@ -16,6 +16,10 @@ class Shout extends BaseMutator
             return '';
         }
 
+        if (str_ends_with($value, '!')) {
+            return strtoupper($value);
+        }
+
         return strtoupper((string)$value) . "!";
     }
 }

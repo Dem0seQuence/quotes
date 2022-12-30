@@ -18,7 +18,7 @@ class CachingJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(protected string $key, protected int $ttl, protected $value)
+    public function __construct(protected string $key, protected $ttl, protected $value)
     {
         //
     }

@@ -18,7 +18,7 @@ class ShoutingQuote implements QuoteRepositoryContract
         return array_map(fn($quote) => $this->shout($quote), $this->quoteRepositoryContract->getQuotes($author, $limit));
     }
 
-    public function shout(string $quote): string
+    private function shout(string $quote): string
     {
         return Shout::get($quote);
     }
