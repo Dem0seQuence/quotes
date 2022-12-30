@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/shout/{author}', 'App\Http\Controllers\Api\QuoteController@shout');
+
+Route::fallback(fn() => abort(404, 'API resource not found'));
