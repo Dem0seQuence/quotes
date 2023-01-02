@@ -14,7 +14,6 @@ Github repository: [twiscard/techtest](https://github.com/twiscard/techtest)
     - http port: APP_PORT
     - mysql port: FORWARD_DB_PORT
     - redis port: FORWARD_REDIS_PORT
-    - rabbitmq port: FORWARD_RABBITMQ_PORT
     - rabbitmq management plugin port: FORWARD_RABBITMQ_MANAGEMENT_PORT
 
 ## Available endpoints

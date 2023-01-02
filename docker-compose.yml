@@ -62,7 +62,6 @@ services:
         networks:
             - sail
         ports:
-            - '${FORWARD_RABBITMQ_PORT:-5672}:5672'
             - '${FORWARD_RABBITMQ_MANAGEMENT_PORT:-15672}:15672'
         volumes:
             - './docker/rabbitmq-enabled-plugins:/etc/rabbitmq/enabled_plugins'
