@@ -18,9 +18,9 @@ Github repository: [twiscard/techtest](https://github.com/twiscard/techtest)
     - rabbitmq management plugin port: FORWARD_RABBITMQ_MANAGEMENT_PORT
 
 ## Available endpoints
-- http://awesomequotesapi.test:8082/api/shout/<author>?limit=<limit>
+- http://awesomequotesapi.test:8082/shout/<author>?limit=<limit>
 ### Examples
-- [http://awesomequotesapi.test:8082/api/shout/steve-jobs?limit=2](http://awesomequotesapi.test:8082/api/shout/steve-jobs?limit=2)
+- [http://awesomequotesapi.test:8082/shout/steve-jobs?limit=2](http://awesomequotesapi.test:8082/shout/steve-jobs?limit=2)
 
 ## Available commands
 - Get author shouted quotes using `./vendor/bin/sail artisan quotes:shout author --limit=limit`
